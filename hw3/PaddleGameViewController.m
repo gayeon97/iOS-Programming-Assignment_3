@@ -333,7 +333,6 @@
         //the star hits the paddle
         if (CGRectIntersectsRect(_star.layer.frame, _paddle.layer.frame)) {
 
-            //_directionImage1.x = 1.0;
             _directionImage1.y = -1.0;
                 
             //increment the score by 1
@@ -395,7 +394,6 @@
 
     if (paddleCenterPoint > 56) {
         _directionImage2.x = 1.0;
-        //position = _paddle.layer.position;
         position.x -= 25.0;
         _paddle.layer.position = position;
     }
@@ -408,7 +406,6 @@
 
     if (paddleCenterPoint < self.gameView.frame.size.width - 56) {
         _directionImage2.x = 1.0;
-        //position = _paddle.layer.position;
         position.x += 25.0;
         _paddle.layer.position = position;
     }
