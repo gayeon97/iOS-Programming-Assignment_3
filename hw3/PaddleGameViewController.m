@@ -31,8 +31,6 @@
 
 @property Boolean justStarted;
 
-//@property int savedScore;
-
 @property Boolean scoreChanged;
 
 @property (weak, nonatomic) IBOutlet UIImageView *brick1;
@@ -122,7 +120,7 @@
     } else if (_brick7.hidden == YES && _brick8.hidden == YES && _brick9.hidden == YES) {
         _star.layer.position = CGPointMake(_random, 150);
     } else {
-         _star.layer.position = CGPointMake(_random, 220);
+         _star.layer.position = CGPointMake(_random, 180);
     }
     [ self.gameView.layer addSublayer: _star.layer ];
         
@@ -368,7 +366,7 @@
         } else {
             origin = _star.layer.position;
             origin.x = _random;
-            origin.y = 220;
+            origin.y = 180;
             _star.layer.position = origin;
         }
     }
