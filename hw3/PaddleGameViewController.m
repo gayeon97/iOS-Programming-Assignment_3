@@ -355,25 +355,21 @@
             origin.x = _random;
             origin.y = 70;
             _star.layer.position = origin;
-            //_star.layer.position =  CGPointMake(_random, 70);
         } else if (_brick4.hidden == YES && _brick5.hidden == YES && _brick6.hidden == YES && _brick7.hidden == YES && _brick8.hidden == YES && _brick9.hidden == YES) {
             origin = _star.layer.position;
             origin.x = _random;
             origin.y = 80;
             _star.layer.position = origin;
-            //_star.layer.position = CGPointMake(_random, 80);
         } else if (_brick7.hidden == YES && _brick8.hidden == YES && _brick9.hidden == YES) {
             origin = _star.layer.position;
             origin.x = _random;
             origin.y = 150;
             _star.layer.position = origin;
-            //_star.layer.position = CGPointMake(_random, 150);
         } else {
             origin = _star.layer.position;
             origin.x = _random;
             origin.y = 220;
             _star.layer.position = origin;
-            //_star.layer.position = CGPointMake(_random, 220);
         }
     }
 
