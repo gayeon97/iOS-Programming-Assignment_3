@@ -1,7 +1,6 @@
 Assignment 3
 ===============
 **Gayeon Park**
-
 *iOS Programming, Spring 2020*
 
 This assignment has 4 portions: Table View Controller, View Controller, CG Graphics, and CG animation.  We also created a Launch Screen and  an app icon.
