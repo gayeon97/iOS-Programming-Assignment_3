@@ -81,6 +81,17 @@
     //did just start the view?
     _justStarted = YES;
     
+    //determine brick visibility
+    _brick9.hidden = [[NSUserDefaults standardUserDefaults] boolForKey:@"block9"];
+    _brick8.hidden = [[NSUserDefaults standardUserDefaults] boolForKey:@"block8"];
+    _brick7.hidden = [[NSUserDefaults standardUserDefaults] boolForKey:@"block7"];
+    _brick6.hidden = [[NSUserDefaults standardUserDefaults] boolForKey:@"block6"];
+    _brick5.hidden = [[NSUserDefaults standardUserDefaults] boolForKey:@"block5"];
+    _brick4.hidden = [[NSUserDefaults standardUserDefaults] boolForKey:@"block4"];
+    _brick3.hidden = [[NSUserDefaults standardUserDefaults] boolForKey:@"block3"];
+    _brick2.hidden = [[NSUserDefaults standardUserDefaults] boolForKey:@"block2"];
+    _brick1.hidden = [[NSUserDefaults standardUserDefaults] boolForKey:@"block1"];
+    
     //create scoreboard
     _scoreboard.text = @"Score:";
     [_scoreboard setFont:[UIFont boldSystemFontOfSize:25]];
@@ -104,7 +115,15 @@
     _directionImage1 = CGPointMake(-1.0, -1.0);
     //find a random x coordinate to start from the top
     _random = arc4random_uniform(self.gameView.frame.size.width);
-    _star.layer.position = CGPointMake(_random, 220);
+    if (_brick1.hidden == YES && _brick2.hidden == YES && _brick3.hidden == YES && _brick4.hidden == YES && _brick5.hidden == YES && _brick6.hidden == YES && _brick7.hidden == YES && _brick8.hidden == YES && _brick9.hidden == YES) {
+        _star.layer.position = CGPointMake(_random, 70);
+    } else if (_brick4.hidden == YES && _brick5.hidden == YES && _brick6.hidden == YES && _brick7.hidden == YES && _brick8.hidden == YES && _brick9.hidden == YES) {
+        _star.layer.position = CGPointMake(_random, 80);
+    } else if (_brick7.hidden == YES && _brick8.hidden == YES && _brick9.hidden == YES) {
+        _star.layer.position = CGPointMake(_random, 150);
+    } else {
+         _star.layer.position = CGPointMake(_random, 220);
+    }
     [ self.gameView.layer addSublayer: _star.layer ];
         
     
@@ -116,19 +135,6 @@
     
     ////////// #6  SETUP TIMER
     _timer = [ NSTimer scheduledTimerWithTimeInterval: 0.01 target: self selector: @selector(handleTimer:) userInfo: nil repeats: YES];
-    
-    
-    //determine brick visibility
-    _brick9.hidden = [[NSUserDefaults standardUserDefaults] boolForKey:@"block9"];
-    _brick8.hidden = [[NSUserDefaults standardUserDefaults] boolForKey:@"block8"];
-    _brick7.hidden = [[NSUserDefaults standardUserDefaults] boolForKey:@"block7"];
-    _brick6.hidden = [[NSUserDefaults standardUserDefaults] boolForKey:@"block6"];
-    _brick5.hidden = [[NSUserDefaults standardUserDefaults] boolForKey:@"block5"];
-    _brick4.hidden = [[NSUserDefaults standardUserDefaults] boolForKey:@"block4"];
-    _brick3.hidden = [[NSUserDefaults standardUserDefaults] boolForKey:@"block3"];
-    _brick2.hidden = [[NSUserDefaults standardUserDefaults] boolForKey:@"block2"];
-    _brick1.hidden = [[NSUserDefaults standardUserDefaults] boolForKey:@"block1"];
-    
 }
 
 
@@ -162,190 +168,163 @@
     
     /////////////////////////////// ROW 3 FROM TOP
     //check if the star hit brick 9
-    if (_star.layer.position.y == 170) {
-           
-        if (CGRectIntersectsRect(_star.layer.frame, _brick9.layer.frame)) {
+    if (CGRectIntersectsRect(_star.layer.frame, _brick9.layer.frame)) {
+        
+        if (_brick9.hidden == NO) {
+            _brick9.hidden = YES;
             
-            if (_brick9.hidden == NO) {
-                _brick9.hidden = YES;
-                
-                _directionImage1.y = 1.0;
-                //increment the score by 1
-                _currentScore += 1;
-                _score.text = [NSString stringWithFormat:@"%i", _currentScore];
-                
-                _scoreChanged = YES;
-                
-                //set boolean to YES for later visibility
-                [[NSUserDefaults standardUserDefaults] setBool: YES forKey:@"block9"];
-            }
+            _directionImage1.y = 1.0;
+            //increment the score by 1
+            _currentScore += 1;
+            _score.text = [NSString stringWithFormat:@"%i", _currentScore];
+            
+            _scoreChanged = YES;
+            
+            //set boolean to YES for later visibility
+            [[NSUserDefaults standardUserDefaults] setBool: YES forKey:@"block9"];
         }
     }
        
     //check if the star hit brick 8
-    if (_star.layer.position.y == 170) {
-        //hit brick 8
-        if (CGRectIntersectsRect(_star.layer.frame, _brick8.layer.frame)) {
+    if (CGRectIntersectsRect(_star.layer.frame, _brick8.layer.frame)) {
+        
+        if (_brick8.hidden == NO) {
+            _brick8.hidden = YES;
             
-            if (_brick8.hidden == NO) {
-                _brick8.hidden = YES;
-                
-                _directionImage1.y = 1.0;
-                //increment the score by 1
-                _currentScore += 1;
-                _score.text = [NSString stringWithFormat:@"%i", _currentScore];
-                
-                _scoreChanged = YES;
-                
-                //set boolean to YES for later visibility
-                [[NSUserDefaults standardUserDefaults] setBool: YES forKey:@"block8"];
-            }
-                  
+            _directionImage1.y = 1.0;
+            //increment the score by 1
+            _currentScore += 1;
+            _score.text = [NSString stringWithFormat:@"%i", _currentScore];
+            
+            _scoreChanged = YES;
+            
+            //set boolean to YES for later visibility
+            [[NSUserDefaults standardUserDefaults] setBool: YES forKey:@"block8"];
         }
+              
     }
        
     //check if the star hit brick 7
-    if (_star.layer.position.y == 170) {
-        //hit brick 7
-        if (CGRectIntersectsRect(_star.layer.frame, _brick7.layer.frame)) {
-            if (_brick7.hidden == NO) {
-                _brick7.hidden = YES;
-                
-                _directionImage1.y = 1.0;
-                //increment the score by 1
-                _currentScore += 1;
-                _score.text = [NSString stringWithFormat:@"%i", _currentScore];
-                
-                _scoreChanged = YES;
-                
-                //set boolean to YES for later visibility
-                [[NSUserDefaults standardUserDefaults] setBool: YES forKey:@"block7"];
-            }
+    if (CGRectIntersectsRect(_star.layer.frame, _brick7.layer.frame)) {
+        if (_brick7.hidden == NO) {
+            _brick7.hidden = YES;
+            
+            _directionImage1.y = 1.0;
+            //increment the score by 1
+            _currentScore += 1;
+            _score.text = [NSString stringWithFormat:@"%i", _currentScore];
+            
+            _scoreChanged = YES;
+            
+            //set boolean to YES for later visibility
+            [[NSUserDefaults standardUserDefaults] setBool: YES forKey:@"block7"];
         }
     }
     ///////////////////////////////////////
        
     /////////////////////////////// ROW 2 FROM TOP
     //check if the star hit brick 6
-    if (_star.layer.position.y == 120) {
-        //hit brick 6
-        if (CGRectIntersectsRect(_star.layer.frame, _brick6.layer.frame)) {
-            if (_brick6.hidden == NO) {
-                _brick6.hidden = YES;
-                
-                _directionImage1.y = 1.0;
-                //increment the score by 1
-                _currentScore += 1;
-                _score.text = [NSString stringWithFormat:@"%i", _currentScore];
-                
-                _scoreChanged = YES;
-                
-                //set boolean to YES for later visibility
-                [[NSUserDefaults standardUserDefaults] setBool: YES forKey:@"block6"];
-            }
+    if (CGRectIntersectsRect(_star.layer.frame, _brick6.layer.frame)) {
+        if (_brick6.hidden == NO) {
+            _brick6.hidden = YES;
+            
+            _directionImage1.y = 1.0;
+            //increment the score by 1
+            _currentScore += 1;
+            _score.text = [NSString stringWithFormat:@"%i", _currentScore];
+            
+            _scoreChanged = YES;
+            
+            //set boolean to YES for later visibility
+            [[NSUserDefaults standardUserDefaults] setBool: YES forKey:@"block6"];
         }
     }
        
     //check if the star hit brick 5
-    if (_star.layer.position.y == 120) {
-        //hit brick 5
-        if (CGRectIntersectsRect(_star.layer.frame, _brick5.layer.frame)) {
-            if (_brick5.hidden == NO) {
-                _brick5.hidden = YES;
-                
-                _directionImage1.y = 1.0;
-                //increment the score by 1
-                _currentScore += 1;
-                _score.text = [NSString stringWithFormat:@"%i", _currentScore];
-                
-                _scoreChanged = YES;
-                
-                //set boolean to YES for later visibility
-                [[NSUserDefaults standardUserDefaults] setBool: YES forKey:@"block5"];
-            }
-                  
+    if (CGRectIntersectsRect(_star.layer.frame, _brick5.layer.frame)) {
+        if (_brick5.hidden == NO) {
+            _brick5.hidden = YES;
+            
+            _directionImage1.y = 1.0;
+            //increment the score by 1
+            _currentScore += 1;
+            _score.text = [NSString stringWithFormat:@"%i", _currentScore];
+            
+            _scoreChanged = YES;
+            
+            //set boolean to YES for later visibility
+            [[NSUserDefaults standardUserDefaults] setBool: YES forKey:@"block5"];
         }
+              
     }
        
     //check if the star hit brick 4
-    if (_star.layer.position.y == 120) {
-        //hit brick 4
-        if (CGRectIntersectsRect(_star.layer.frame, _brick4.layer.frame)) {
-            if (_brick4.hidden == NO) {
-                _brick4.hidden = YES;
-                
-                _directionImage1.y = 1.0;
-                //increment the score by 1
-                _currentScore += 1;
-                _score.text = [NSString stringWithFormat:@"%i", _currentScore];
-                
-                _scoreChanged = YES;
-                
-                //set boolean to YES for later visibility
-                [[NSUserDefaults standardUserDefaults] setBool: YES forKey:@"block4"];
-            }
+    if (CGRectIntersectsRect(_star.layer.frame, _brick4.layer.frame)) {
+        if (_brick4.hidden == NO) {
+            _brick4.hidden = YES;
+            
+            _directionImage1.y = 1.0;
+            //increment the score by 1
+            _currentScore += 1;
+            _score.text = [NSString stringWithFormat:@"%i", _currentScore];
+            
+            _scoreChanged = YES;
+            
+            //set boolean to YES for later visibility
+            [[NSUserDefaults standardUserDefaults] setBool: YES forKey:@"block4"];
         }
     }
     ///////////////////////////////////////
        
     /////////////////////////////// ROW 1 FROM TOP
     //check if it hit brick 3
-    if (_star.layer.position.y == 75) {
-        //hit brick 3
-        if (CGRectIntersectsRect(_star.layer.frame, _brick3.layer.frame)) {
-            if (_brick3.hidden == NO) {
-                _brick3.hidden = YES;
-                
-                _directionImage1.y = 1.0;
-                //increment the score by 1
-                _currentScore += 1;
-                _score.text = [NSString stringWithFormat:@"%i", _currentScore];
-                
-                _scoreChanged = YES;
-                
-                //set boolean to YES for later visibility
-                [[NSUserDefaults standardUserDefaults] setBool: YES forKey:@"block3"];
-            }
+    if (CGRectIntersectsRect(_star.layer.frame, _brick3.layer.frame)) {
+        if (_brick3.hidden == NO) {
+            _brick3.hidden = YES;
+            
+            _directionImage1.y = 1.0;
+            //increment the score by 1
+            _currentScore += 1;
+            _score.text = [NSString stringWithFormat:@"%i", _currentScore];
+            
+            _scoreChanged = YES;
+            
+            //set boolean to YES for later visibility
+            [[NSUserDefaults standardUserDefaults] setBool: YES forKey:@"block3"];
         }
     }
        
     //check if it hit brick 2
-    if (_star.layer.position.y == 75) {
-        //hit brick 2
-        if (CGRectIntersectsRect(_star.layer.frame, _brick2.layer.frame)) {
-            if (_brick2.hidden == NO) {
-                _brick2.hidden = YES;
-                
-                _directionImage1.y = 1.0;
-                //increment the score by 1
-                _currentScore += 1;
-                _score.text = [NSString stringWithFormat:@"%i", _currentScore];
-                
-                _scoreChanged = YES;
-                
-                //set boolean to YES for later visibility
-                [[NSUserDefaults standardUserDefaults] setBool: YES forKey:@"block2"];
-            }
+    if (CGRectIntersectsRect(_star.layer.frame, _brick2.layer.frame)) {
+        if (_brick2.hidden == NO) {
+            _brick2.hidden = YES;
+            
+            _directionImage1.y = 1.0;
+            //increment the score by 1
+            _currentScore += 1;
+            _score.text = [NSString stringWithFormat:@"%i", _currentScore];
+            
+            _scoreChanged = YES;
+            
+            //set boolean to YES for later visibility
+            [[NSUserDefaults standardUserDefaults] setBool: YES forKey:@"block2"];
         }
     }
        
     //check if it hit brick 1
-    if (_star.layer.position.y == 75) {
-        //hit brick 1
-        if (CGRectIntersectsRect(_star.layer.frame, _brick1.layer.frame)) {
-            if (_brick1.hidden == NO) {
-                _brick1.hidden = YES;
-                
-                _directionImage1.y = 1.0;
-                //increment the score by 1
-                _currentScore += 1;
-                _score.text = [NSString stringWithFormat:@"%i", _currentScore];
-                
-                _scoreChanged = YES;
-                
-                //set boolean to YES for later visibility
-                [[NSUserDefaults standardUserDefaults] setBool: YES forKey:@"block1"];
-            }
+    if (CGRectIntersectsRect(_star.layer.frame, _brick1.layer.frame)) {
+        if (_brick1.hidden == NO) {
+            _brick1.hidden = YES;
+            
+            _directionImage1.y = 1.0;
+            //increment the score by 1
+            _currentScore += 1;
+            _score.text = [NSString stringWithFormat:@"%i", _currentScore];
+            
+            _scoreChanged = YES;
+            
+            //set boolean to YES for later visibility
+            [[NSUserDefaults standardUserDefaults] setBool: YES forKey:@"block1"];
         }
     }
     ///////////////////////////////////////
@@ -370,11 +349,32 @@
     
     //check if the star hit the bottom of the View
     if (_star.layer.position.y + (70.0 / 2) + 1 >= (630)) {
-        //////// #9  MOVE image1
-        origin = _star.layer.position;
-        origin.x = _random;
-        origin.y = 220;
-        _star.layer.position = origin;
+        
+        if (_brick1.hidden == YES && _brick2.hidden == YES && _brick3.hidden == YES && _brick4.hidden == YES && _brick5.hidden == YES && _brick6.hidden == YES && _brick7.hidden == YES && _brick8.hidden == YES && _brick9.hidden == YES) {
+            origin = _star.layer.position;
+            origin.x = _random;
+            origin.y = 70;
+            _star.layer.position = origin;
+            //_star.layer.position =  CGPointMake(_random, 70);
+        } else if (_brick4.hidden == YES && _brick5.hidden == YES && _brick6.hidden == YES && _brick7.hidden == YES && _brick8.hidden == YES && _brick9.hidden == YES) {
+            origin = _star.layer.position;
+            origin.x = _random;
+            origin.y = 80;
+            _star.layer.position = origin;
+            //_star.layer.position = CGPointMake(_random, 80);
+        } else if (_brick7.hidden == YES && _brick8.hidden == YES && _brick9.hidden == YES) {
+            origin = _star.layer.position;
+            origin.x = _random;
+            origin.y = 150;
+            _star.layer.position = origin;
+            //_star.layer.position = CGPointMake(_random, 150);
+        } else {
+            origin = _star.layer.position;
+            origin.x = _random;
+            origin.y = 220;
+            _star.layer.position = origin;
+            //_star.layer.position = CGPointMake(_random, 220);
+        }
     }
 
     origin = _star.layer.position;

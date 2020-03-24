@@ -18,16 +18,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"term"]){
-
-        [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"term"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-
-//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"WORKED" message:@"term works" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
-//        [alert show];
-
-    }
-    
     [[NSUserDefaults standardUserDefaults] setInteger:0 forKey:@"HighScore"];
     
     [[NSUserDefaults standardUserDefaults] setBool: NO forKey:@"block9"];
@@ -62,8 +52,6 @@
 }
 
 -(void)applicationWillTerminate:(UIApplication *)application {
-    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"term"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
     
     [[NSUserDefaults standardUserDefaults] setInteger:0 forKey:@"HighScore"];
 
