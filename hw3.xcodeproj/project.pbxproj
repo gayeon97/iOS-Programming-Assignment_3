@@ -16,6 +16,15 @@
 		0D22E6FC2416E84500F080D7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D22E6FB2416E84500F080D7 /* main.m */; };
 		0D22E7062416E84500F080D7 /* hw3Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D22E7052416E84500F080D7 /* hw3Tests.m */; };
 		0D22E7112416E84500F080D7 /* hw3UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D22E7102416E84500F080D7 /* hw3UITests.m */; };
+		0D22E71F2416EE4900F080D7 /* rightArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D22E71E2416EE4800F080D7 /* rightArrow.png */; };
+		0D22E7222416F0E800F080D7 /* DescriptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D22E7212416F0E800F080D7 /* DescriptionViewController.m */; };
+		0D22E7252416F0FF00F080D7 /* CGGraphicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D22E7242416F0FF00F080D7 /* CGGraphicViewController.m */; };
+		0D22E7282416F10C00F080D7 /* PaddleGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D22E7272416F10C00F080D7 /* PaddleGameViewController.m */; };
+		0D39501B2421A22300F947A4 /* headshot.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0D39501A2421A22300F947A4 /* headshot.jpg */; };
+		0D39501D2421B0A000F947A4 /* leftArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 0D39501C2421B0A000F947A4 /* leftArrow.png */; };
+		0D3950202421BE1200F947A4 /* drawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D39501F2421BE1200F947A4 /* drawView.m */; };
+		0DC98BC22422AAA5001F2328 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DC98BC12422AAA5001F2328 /* star.png */; };
+		0DC98BC42422F887001F2328 /* bluePaddle.png in Resources */ = {isa = PBXBuildFile; fileRef = 0DC98BC32422F886001F2328 /* bluePaddle.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +63,19 @@
 		0D22E70C2416E84500F080D7 /* hw3UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hw3UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D22E7102416E84500F080D7 /* hw3UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = hw3UITests.m; sourceTree = "<group>"; };
 		0D22E7122416E84500F080D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0D22E71E2416EE4800F080D7 /* rightArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightArrow.png; sourceTree = "<group>"; };
+		0D22E7202416F0E800F080D7 /* DescriptionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DescriptionViewController.h; sourceTree = "<group>"; };
+		0D22E7212416F0E800F080D7 /* DescriptionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DescriptionViewController.m; sourceTree = "<group>"; };
+		0D22E7232416F0FF00F080D7 /* CGGraphicViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CGGraphicViewController.h; sourceTree = "<group>"; };
+		0D22E7242416F0FF00F080D7 /* CGGraphicViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CGGraphicViewController.m; sourceTree = "<group>"; };
+		0D22E7262416F10C00F080D7 /* PaddleGameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PaddleGameViewController.h; sourceTree = "<group>"; };
+		0D22E7272416F10C00F080D7 /* PaddleGameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaddleGameViewController.m; sourceTree = "<group>"; };
+		0D39501A2421A22300F947A4 /* headshot.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = headshot.jpg; sourceTree = "<group>"; };
+		0D39501C2421B0A000F947A4 /* leftArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leftArrow.png; sourceTree = "<group>"; };
+		0D39501E2421BE1200F947A4 /* drawView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = drawView.h; sourceTree = "<group>"; };
+		0D39501F2421BE1200F947A4 /* drawView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = drawView.m; sourceTree = "<group>"; };
+		0DC98BC12422AAA5001F2328 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
+		0DC98BC32422F886001F2328 /* bluePaddle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bluePaddle.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,8 +132,21 @@
 				0D22E6ED2416E84400F080D7 /* SceneDelegate.m */,
 				0D22E6EF2416E84400F080D7 /* ViewController.h */,
 				0D22E6F02416E84400F080D7 /* ViewController.m */,
+				0D22E7202416F0E800F080D7 /* DescriptionViewController.h */,
+				0D22E7212416F0E800F080D7 /* DescriptionViewController.m */,
+				0D39501E2421BE1200F947A4 /* drawView.h */,
+				0D39501F2421BE1200F947A4 /* drawView.m */,
+				0D22E7232416F0FF00F080D7 /* CGGraphicViewController.h */,
+				0D22E7242416F0FF00F080D7 /* CGGraphicViewController.m */,
+				0D22E7262416F10C00F080D7 /* PaddleGameViewController.h */,
+				0D22E7272416F10C00F080D7 /* PaddleGameViewController.m */,
 				0D22E6F22416E84400F080D7 /* Main.storyboard */,
 				0D22E6F52416E84500F080D7 /* Assets.xcassets */,
+				0DC98BC32422F886001F2328 /* bluePaddle.png */,
+				0DC98BC12422AAA5001F2328 /* star.png */,
+				0D39501A2421A22300F947A4 /* headshot.jpg */,
+				0D22E71E2416EE4800F080D7 /* rightArrow.png */,
+				0D39501C2421B0A000F947A4 /* leftArrow.png */,
 				0D22E6F72416E84500F080D7 /* LaunchScreen.storyboard */,
 				0D22E6FA2416E84500F080D7 /* Info.plist */,
 				0D22E6FB2416E84500F080D7 /* main.m */,
@@ -242,6 +277,11 @@
 			files = (
 				0D22E6F92416E84500F080D7 /* LaunchScreen.storyboard in Resources */,
 				0D22E6F62416E84500F080D7 /* Assets.xcassets in Resources */,
+				0D39501D2421B0A000F947A4 /* leftArrow.png in Resources */,
+				0DC98BC42422F887001F2328 /* bluePaddle.png in Resources */,
+				0D39501B2421A22300F947A4 /* headshot.jpg in Resources */,
+				0DC98BC22422AAA5001F2328 /* star.png in Resources */,
+				0D22E71F2416EE4900F080D7 /* rightArrow.png in Resources */,
 				0D22E6F42416E84400F080D7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,9 +307,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D22E7282416F10C00F080D7 /* PaddleGameViewController.m in Sources */,
+				0D22E7222416F0E800F080D7 /* DescriptionViewController.m in Sources */,
 				0D22E6F12416E84400F080D7 /* ViewController.m in Sources */,
 				0D22E6EB2416E84400F080D7 /* AppDelegate.m in Sources */,
+				0D22E7252416F0FF00F080D7 /* CGGraphicViewController.m in Sources */,
 				0D22E6FC2416E84500F080D7 /* main.m in Sources */,
+				0D3950202421BE1200F947A4 /* drawView.m in Sources */,
 				0D22E6EE2416E84400F080D7 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
