@@ -50,16 +50,14 @@
 -(void)back:(UIBarButtonItem *)sender
 {
     [self.navigationController popToRootViewControllerAnimated:YES];
-    
+
     //stop Timer
     if(_timer)
     {
         [_timer invalidate];
          _timer = nil;
     }
-    
 }
-
 
 
 - (void)loadView {
